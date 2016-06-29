@@ -1,0 +1,26 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "path": "^0.12.7",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlyMoe/Friend-Finder.git"
+  },
+  "author": "Richard Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlyMoe/Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/FlyMoe/Friend-Finder#readme"
+}
