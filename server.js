@@ -34,7 +34,7 @@ require('./app/routing/html-routes.js')(app);
 // The below code effectively "starts" our server 
 // ==============================================================================
 
-//app.listen(PORT, function() {
-app.listen(process.env.PORT, function() {
+app.listen(PORT, function() {
+//app.listen(process.env.PORT, function() {
 	console.log("App listening on PORT: " + PORT);
 });
