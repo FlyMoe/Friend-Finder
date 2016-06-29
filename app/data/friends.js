@@ -3,7 +3,7 @@
 var friendArray = [
 	{
 		name: "Richard Garcia",
-		photo: "rrgarcia@gmail.com",
+		photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAk3AAAAJGYyZGU2OTBlLWEzY2QtNDRlOC1iNGM0LWYzZTI1OTZmZDc3OQ.jpg",
 		scores:[
 			     5,
 			     1,
