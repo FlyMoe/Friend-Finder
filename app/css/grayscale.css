@@ -379,3 +379,11 @@ body {
 label {
     text-align: left;
 }
+
+#matchName, .modal-title {
+    color: black;
+}
+
+#close {
+    background-color: #080808;
+}
