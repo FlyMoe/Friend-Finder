@@ -319,37 +319,30 @@
         // $.post(currentURL + "/api/friends", newFriend,
         //     function(data){
         $.post(currentURL + "/api/friends", newFriend)
-            .done(function(data) {
-                    console.log(data);
-
-                    console.log("data.name: "+data.name);
-
-                    $("#matchName").text(data.name);
-                    $('#matchImg').attr("src", data.photo).width(300);
-                    $("#resultsModal").modal('show');
-
-            }); 
-
-           //}
-
-                // // Clear the form when submitting
-                // $('#inputName').val("");
-                // $('#photoImage').val("");
-                // $('#question1').val("");
-                // $('#question2').val("");
-                // $('#question3').val("");
-                // $('#question4').val("");
-                // $('#question5').val("");
-                // $('#question6').val("");
-                // $('#question7').val("");
-                // $('#question8').val("");
-                // $('#question9').val("");
-                // $('#question10').val("");
-             
             
-       // );
+        .done(function(data) {
+            console.log(data);
+            $("#matchName").text(data.name);
+            $('#matchImg').attr("src", data.photo).width(300);
+            $("#resultsModal").modal('show');
 
-    return false;
+        }); 
+
+        // Clear the form when submitting
+        $('#inputName').val("");
+        $('#photoImage').val("");
+        $('#question1').val("");
+        $('#question2').val("");
+        $('#question3').val("");
+        $('#question4').val("");
+        $('#question5').val("");
+        $('#question6').val("");
+        $('#question7').val("");
+        $('#question8').val("");
+        $('#question9').val("");
+        $('#question10').val("");
+ 
+        return false;
 
     });
 

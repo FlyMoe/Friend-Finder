@@ -17,27 +17,47 @@ module.exports = function(app){
 	app.post('/api/friends', function(req, res){
 
 		var newFriend = req.body;
+		var total,
+			index,
+		    totalDifference = 0,
+		    tmpTotalDifference = 0;
+		  
+		// Loop through the friends array and compare each one to the new friend.
+		for (var i = 0; i < friendsData.length; i++) {
+			for (var j = 0; j < friendsData[i].scores.length; j++) { 
+				
+				// Subtract both score values from the friends array and from the new friends array.
+				// Make sure the total ends up being a positive numbers.
+				total = Math.abs(parseInt(friendsData[i].scores[j]) - parseInt(newFriend.scores[j]));
+
+				// Add each total to the tmpTotalDifference
+				tmpTotalDifference = parseInt(tmpTotalDifference) + parseInt(total);
+			}
+		
+			// If looping through the first time then set totalDifference to tmpTotalDifference,
+			// and set index to 0 for the first value in the array.
+			if (totalDifference == 0) {
+				totalDifference = tmpTotalDifference;
+				index = 0;
+			}  
+		
+		 	// If totalDifference if greater than the tmpTotalDifference we have a new match so set the totalDifference 
+		 	// to the value and set the index to the index of that value in the array.
+			if (totalDifference > tmpTotalDifference) {
+				totalDifference = tmpTotalDifference;
+				index = i;
+			}
+
+			// Rest back to zero
+			tmpTotalDifference = 0;			
+		}
+
+
+		// Send data back to html as json object
+		res.json(friendsData[index]);
 
 		// Push new friend into the friendsData array
-		friendsData.push(newFriend);
+		friendsData.push(newFriend);	
 
-		// Display the results as json
-		res.json(newFriend);
-
-		var totalDifference = 0;
-		var total;
-		// Compare the values to each array to come up with a match
-		// i = first array, j = second array
-		for (var i = 0; i < friendsData[0].scores.length; i++) {
-			for (var j = 0; j < friendsData[1].scores.length; j++) { 
-				if (i == j) {
-					// subtract both values from the array and make sure it's a positive numbers
-					total = Math.abs(parseInt(friendsData[0].scores[i]) - parseInt(friendsData[1].scores[j]));
-
-					// Add each total to the totalDifference
-					totalDifference = parseInt(totalDifference) + parseInt(total);
-				}
-			}
-		}
 	});
 }
