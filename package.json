@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/FlyMoe/Friend-Finder/issues"
   },
-  "homepage": "https://github.com/FlyMoe/Friend-Finder#readme"
+  "homepage": "https://github.com/FlyMoe/Friend-Finder#readme",
+  "engines": {
+    "node": "4.4.5"
+  }      
 }
